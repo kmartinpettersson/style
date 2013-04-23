@@ -1,0 +1,40 @@
+@page:first {
+	margin: 107.4mm 0 60mm 0;
+	@top-left {
+		content: "";
+		margin: 0 0 0 0;
+	}
+	@top-right-corner {
+		content: "";
+		margin: 0 0 0 0;
+	}
+	@bottom-right-corner {
+		content: "";
+		margin: 0 0 0 0;
+	}
+	@top {
+		content:url("imintLarge.svg");
+		vertical-align: bottom;
+	}
+	@bottom {
+		font-family: "Myriad Pro", "Verdana", sans-serif;
+		font-weight: normal;
+		font-size: 14pt;
+		white-space: pre;
+		content: string(identification) "\a" string(date);
+	}	
+}
+header {
+	page-break-after: always;
+	margin: 19.1mm 0 0 0;
+	font-size: 30pt;
+	font-weight: bold;
+	vertical-align: center;
+}
+header:after {
+	font-size: 18pt;
+	padding: 1cm 0 0 0;
+}
+h1 {
+	page-break-before: always;
+}
