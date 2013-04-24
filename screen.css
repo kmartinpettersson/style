@@ -26,4 +26,20 @@ body:after {
 	font-size: 10px;
 	content: "© Imint AB";
 }
+span.footnote:before {
+	content: " (";
+}
+span.footnote:after {
+	content: ") ";
+}
+aside {
+	display: inline;
+ 	float: right;
+	clear: right;
+	margin-right: -41%;
+	margin-bottom: 1em;
+	width: 37%;
+	text-align: left;
+	page-break-inside: avoid;
+}
 }

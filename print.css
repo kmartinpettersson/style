@@ -59,16 +59,31 @@ a[href^="http"] {
 	color: inherit;
 	text-decoration: inherit;
 }
+span.footnote,
 a[href^="http"]:after {
 	float: footnote;
+}
+a[href^="http"]:after {
 	content: attr(href);
 }
+span.footnote::footnote-marker,
 a[href^="http"]:after::footnote-marker {
 	margin-right: 0.5em;
 }
+span.footnote::footnote-call,
 a[href^="http"]:after::footnote-call {
 	font-size: 60%;
 	vertical-align: super;
 	line-height: none;
 }
+}
+aside {
+	display: inline;
+ 	float: right;
+	clear: right;
+	margin-right: -35mm;
+	margin-bottom: 1em;
+	width: 30mm;
+	text-align: left;
+	page-break-inside: avoid;
 }
