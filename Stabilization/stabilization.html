@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vidview SDK for .NET Getting Started Guide</title>
+	<meta name="author" content="Andreas Lifvendahl"/>
+	<meta name="identification" content=""/>
+	<meta name="classification" content=""/>
+	<meta name="date" content="June, 2013"/>
+	<link href="../resources/base.css" rel="stylesheet" type="text/css">
+	<link href="../resources/document.css" rel="stylesheet" type="text/css">
+	<link href="../resources/screen.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="../resources/print.css" rel="stylesheet" type="text/css" media="print">
+</head>
+<body>
+
+<header>Vidhance Stabilization Details</header>
+<h2>Introduction</h2>
+<p>This document gives some additional details on the Vidhance real-time image stabilization, and its access from Vidview
+</p>
+
+<h2>Vidhance Stabilization</h2>
+<p>The Vidhance video stabilization is designed to reduce unwanted motion in the video, typically as a result of a moving camera platform.
+The goal is to adapt the video to enhance the performance of a human observer; to reduce shakiness vision fatigue as well as supporting human perception.
+The Vidhance video stabilization function relies fully on real-time video analysis, and is thus a full real-time, sensor- and telemetry independent function. 
+The function uses analysis metadata from the Vidhance motion analysis engine. To allow for real-time, minumum-latency performance, analysis is made on current and previous
+video data, where motion is identified. 
+</p>
+
+<p>The Vidhance stabilizer is highly optimized, and are able to identify planar motion, rotational motion, as well as z-axis (optical axis) motion.
+This motion information is then used to correct the displayed video. The Vidhance stabilizer has been trained and adapted using a large data set of authentic video,
+from aerial, land, marine and submarine platforms. The method of efficiently finding, selecting and re-evaluate tie-points, and the correction transformation methods,
+have been filed as patent application in both the U.S. and European Union. 
+</p>
+ 
+<h2>Performance and examples</h2>
+ <p>The Vidhance video stabilization completes the full motion analysis and transformation procedure with less than one video frame delay, for standard PAL or NTSC video.
+ The stabilization typically yield in the order of four to eight times reduction in unwanted motion. Vidhance stabilization works independantly on any pre-stabilization
+ applied, for example through the use of gyro gimbal camera mounts, or electronic hardware stabilization. Some vibration frequencis will be difficult for a gimbaled
+ system to reduce, and when using high levels of zoom, even small vibrations will be multiplied and hence reduce visibility. Vidhance resolves also these situations.
+ Vidhance video stabilization also use and store all available video data, whereas an electronic hardware stabilizer, with a fixed output frame size, will black
+ out cornes, and the larger the vibration amplitude, the more data will get lost.
+  </p>
+
+ <p>The below image shows a frequency diagram, with data from video captured from a small UAS. The red line is the motion amplitude of the original video,
+ and the green line is after Vidhance stabilization. Note that Vidhance applies a cutoff frequency for dampening for low frequencies, as this relates to
+ operator-intended motion, such as camera panning.
+ 	<img src="stabilization.png" width="480">
+  </p>
+  
+ <p>The graph below shows another way of presenting the Vidhance stabilization performance. It is a pixel-walk diagram, where an individual pixel
+ is followed over a number of frames. Here, the blue lines represent the pixel motion in the original video, and the red the motion pattern for the same pixel
+ after Vidhance stabilization. The result for a human observer is a smoother viewing experience.
+ 	<img src="xy-motion.png" width="480">
+  </p>
+  
+  <p>The following graph shows the effect of rotational stabilization, as angular rotational motion over a series of 150 video frames. The blue line represent
+  the original video, and the red line after Vidhance stabilization.
+ 	<img src="rotation.png" width="480">
+  </p>
+
+  <h2>Modes and adaptability in Vidview</h2>
+ <p>Video stabilization also relates to presenting video on a viewing window on a screen. The correction transformation of the Vidhance stabilization thus also
+ incorporates parameters and decision criterias for display, to handle situations where the video frame is moving close to the borders of the viewing window.
+  </p>
+  
+  <p>When accessed from Imint Vidview, the Vidhance stabilizer can be used in four pre-configured modes.
+  <ol>
+	<li>Overview mode; when the full video is being observed by a passive user (lacking control of the camera)</li>
+	<li>Zoom mode; when a passive user (lacking control of the camera) observes a zoomed-in part of the video.</li>
+	<li>Operator mode; when the video is being observed by an operator with camera control.</li>
+	<li>Automatic mode; adaptive parameter selection based on meta-analysis.</li>
+  </p>
+  
