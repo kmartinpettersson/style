@@ -88,21 +88,22 @@ table > caption:before{
 	counter-increment: table;
 	content: "Table " counter(table) ": ";
 }
-/*img:before {
-	display: block;
-	float: left;
-	clear: left;
-	width: 10mm;
-	text-align: right;
-	font-size: 0.9em;
-	margin: 0 0 1.2em -40%;
-	font-style: italic;
-	counter-increment: image;
-	content: "Image " counter(image) ": " attr(alt);
-}*/
-img {
+figure {
 	display: block;
 	width: 100%;
 	height: auto;
 	margin: 10mm 0 10mm 0;	
+}
+figure, img {
+	width: 100%;
+	height: auto;
+}
+figure, figcaption {
+	font-style: italic;
+	caption-side:bottom;
+	margin:10pt 0 12pt 0;
+}
+figure, figcaption:before {
+	counter-increment: figure;
+	content: "Figure " counter(figure) ": ";
 }
