@@ -11,6 +11,20 @@ header:before {
 	text-align: center;
 	padding: 2cm 0 2cm 0;
 }
+nav {
+  position: fixed;
+  left: 1cm;
+  width: 6cm;
+  text-align: center;
+  padding: 2cm 0 2cm 0;
+  font-size: 9pt;
+}
+nav > h1 {
+  display: none;
+}
+nav li > a:hover {
+	text-decoration: underline;
+}
 body:after { 
 	position: fixed; 
 	height: 100px; 

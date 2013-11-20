@@ -43,6 +43,12 @@ header:after {
 	margin: 0 0 0 0;
 	content: string(author);
 }
+h1, h2, h3, h4, h5, h6, h7 {
+	page-break-after: avoid;
+}
+figure, table {
+	page-break-inside: avoid;
+}
 meta[name="author"] {
 	string-set: author attr(content);
 }
@@ -76,6 +82,8 @@ a[href^="http"]:after::footnote-call {
 	vertical-align: super;
 	line-height: none;
 }
+nav li > a:after { 
+	content: leader('.') target-counter(attr(href), page) 
 }
 aside {
 	display: inline;
@@ -86,4 +94,5 @@ aside {
 	width: 30mm;
 	text-align: left;
 	page-break-inside: avoid;
+}
 }

@@ -3,10 +3,10 @@ html {
 	text-align: justify;
 }
 body {
-	counter-reset: h1 h2 h3 h4 table;
+	counter-reset: h1 h2 h3 h4 table figure;
 	max-width: 18cm;
 }
-header, h1, h2, h3, h4, h5, h6 {
+header, h1, h2, h3, h4, h5, h6, nav {
 	font-family:"Myriad Pro", "Verdana", sans-serif;
 	font-weight: normal;
 	page-break-after: avoid;
@@ -63,9 +63,40 @@ dl > dt > code {
 	font-weight: normal;
 }
 dl > dd {
-	padding: 0 0 0 6mm;
-	margin: 0;
+  padding: 0 0 0 6mm;
+  margin: 0;
 }
+nav > h1 {
+  content: "Table of Contents";
+}
+nav a {
+  text-decoration: none;
+  color: black;
+}
+nav > ol {
+  counter-reset: chapter;
+  padding: 0 0 0 6mm;
+}
+nav > li {
+  margin: 1mm 0 1mm 0;
+}
+nav > ol > li > ol {
+  padding: 0 0 0 4mm;
+}
+nav > ol > li:before {
+	counter-reset: section;
+	counter-increment: chapter;
+	content: counter(chapter);
+	position: absolute;
+	left: -4mm;
+}
+nav > ol > li > ol > li:before {
+	counter-increment: section;
+	content: counter(chapter) "." counter(section);
+	position: absolute;
+	left: -6mm;
+}
+
 table {
 	margin: 16pt 0 12pt 0;
 	text-align: left;
@@ -94,16 +125,24 @@ figure {
 	height: auto;
 	margin: 10mm 0 10mm 0;	
 }
-figure, img {
+figure {
 	width: 100%;
 	height: auto;
 }
-figure, figcaption {
+figure > img {
+	display: block;
+	max-height: 300px;
+	max-width: 100%;
+	margin: 0 auto 0 auto;
+}
+figure > figcaption {
 	font-style: italic;
 	caption-side:bottom;
-	margin:10pt 0 12pt 0;
+	text-align: center;
+	margin: 6pt 0 12pt 0;
 }
-figure, figcaption:before {
+figure > figcaption:before {
+	font-weight: bold;
 	counter-increment: figure;
 	content: "Figure " counter(figure) ": ";
 }

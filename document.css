@@ -1,13 +1,13 @@
 @import url("base.css");
 @import url("screen.css") screen;
 @import url("document-print.css") print;
-h1:before {
+*:not(nav) > h1:before {
 	counter-increment: h1; 
 	content: counter(h1);
     float: left;
 	width: 13mm;
 }
-h1 {
+*:not(nav) > h1 {
 	font-size: 14pt;
 	margin: 46pt 0 28pt 0;
 	counter-reset: h2 h3 h4;

@@ -27,10 +27,11 @@
 }
 header {
 	page-break-after: always;
-	margin: 19.1mm 0 0 0;
+	margin: 19.1mm auto 0 auto;
 	font-size: 30pt;
 	font-weight: bold;
 	vertical-align: center;
+	max-width: 80%;
 }
 header:after {
 	font-size: 18pt;

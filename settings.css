@@ -1,56 +1,79 @@
 @import url("document.css");
+dl.properties, 
+dl.methods 
+{
+	padding-left: 0;
+	font-family:"Myriad Pro", "Verdana", sans-serif;
+	font-size: 9pt;
+}
 dl.properties > dt.read.write.notify:after {
-	content: "rwn";
+	content: "read, write, notify";
 }
 dl.properties > dt.read.write:after {
-	content: "rw-";
+	content: "read, write";
 }
 dl.properties > dt.read.notify:after {
-	content: "r-n";
+	content: "read, notify";
 }
 dl.properties > dt.write.notify:after {
-	content: "-wn";
+	content: "write, notify";
 }
 dl.properties > dt.read:after {
-	content: "r--";
+	content: "read";
 }
 dl.properties > dt.write:after {
-	content: "-w-";
+	content: "write";
 }
 dl.properties > dt:after {
 	margin-left: 2em;
-	font-family:"Myriad Pro", "Verdana", sans-serif;
 	font-weight: normal;
+	font-style: italic;
 	font-size: 7pt;
 }
-dl.properties > dt, dl.methods > dt {
-	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+dl.properties > dt, 
+dl.methods > dt {
 	font-weight: bold;
+}
+dd.example:before {
+	content: "Example:";
+	font-family:"Myriad Pro", "Verdana", sans-serif;
+	font-size: 10pt;
+	padding-right: 1ex;
 }
 dd.example {
 	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
 }
 h1.object {
-	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
-	font-weight: bold;
+	text-transform: capitalize;
 }
-h1.object:before {
+dt {
+	margin-top: 1ex;
+}
+dd.parameters > dl {
+	padding: 0;
+}
+dd.parameters > dl > dt {
 	font-family:"Myriad Pro", "Verdana", sans-serif;
 	font-weight: normal;
+	margin-top: 0;
+	margin-right: 0.2cm;
+	display:inline;
+/*	float: left;
+	clear: left;*/
 }
-dd.signature {
-	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+dd.parameters > dl > dd {
+	font-family: "Myriad Pro", "Verdana", sans-serif;
+	padding-left: 0;
+	display:inline;
+/*	margin-left: 3cm;*/
 }
-dd.signature > span.parameter:before, dd.signature > dl > dt:before {
+
+dt > span.parameter:before, 
+dd.parameters > dl > dt:before {
 	content: "<";
 }
-dd.signature > span.parameter:after, dd.signature > dl > dt:after {
+dt > span.parameter:after, 
+dd.parameters > dl > dt:after {
 	content: ">";
-}
-dd.signature > dl > dt {
-	font-weight: normal;
-}
-dd.signature > dl > dd {
-	font-family:"Myriad Pro", "Verdana", sans-serif;
 }
 
