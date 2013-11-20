@@ -1,4 +1,7 @@
-@import url("document.css");
+@import url("paper.css");
+nav > ol > li > ol {
+	display: none;
+} 
 dl.properties, 
 dl.methods 
 {
@@ -57,18 +60,16 @@ dd.parameters > dl > dt {
 	font-weight: normal;
 	margin-top: 0;
 	margin-right: 0.2cm;
-	display:inline;
-/*	float: left;
-	clear: left;*/
+	float: left;
+	clear: left;
 }
 dd.parameters > dl > dd {
 	font-family: "Myriad Pro", "Verdana", sans-serif;
-	padding-left: 0;
-	display:inline;
-/*	margin-left: 3cm;*/
 }
 
-dt > span.parameter:before, 
+dt > span.parameter:before {
+	content: " <";
+}
 dd.parameters > dl > dt:before {
 	content: "<";
 }

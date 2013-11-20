@@ -75,26 +75,30 @@ nav a {
 }
 nav > ol {
   counter-reset: chapter;
-  padding: 0 0 0 6mm;
+  padding: 0 0 0 8mm;
 }
 nav > li {
   margin: 1mm 0 1mm 0;
 }
 nav > ol > li > ol {
-  padding: 0 0 0 4mm;
+  padding: 0 0 0 6mm;
 }
 nav > ol > li:before {
 	counter-reset: section;
 	counter-increment: chapter;
 	content: counter(chapter);
 	position: absolute;
-	left: -4mm;
+	left: -2em;
+	text-align: right;
+	width: 1.6em;
 }
 nav > ol > li > ol > li:before {
 	counter-increment: section;
 	content: counter(chapter) "." counter(section);
 	position: absolute;
-	left: -6mm;
+	left: -3em;
+	text-align: right;
+	width: 2.6em;
 }
 
 table {

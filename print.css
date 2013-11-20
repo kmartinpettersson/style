@@ -2,11 +2,11 @@
 @page { 
 	size: A4;
 	margin: 60mm 40mm 37mm 50mm;
-    @top-left {
+	@top-left {
 		content:url("imintHorizontal.svg");
 		margin: -3.3mm 0 0 -22mm;
-    }
-    @top-right-corner {
+	}
+	@top-right-corner {
 		font-family: "Myriad Pro", "Verdana", sans-serif;
 		font-weight: normal;
 		font-size: 8pt;
@@ -15,14 +15,14 @@
 		margin: 25mm 10mm 0mm 0mm;
 		white-space: pre;
 		content: string(identification) "\a" string(date) "\a" string(author) "\a\a" string(classification);
-    }
-    @bottom-right-corner { 
+	}
+	@bottom-right-corner { 
 		font-family: "Myriad Pro", "Verdana", sans-serif;
 		font-weight: normal;
 		font-size: 8pt;
 		text-align: center;
-        content: counter(page) " of " counter(pages);
-    }
+		content: counter(page) " of " counter(pages);
+	}
 }
 body {
 	margin: 0 0 0 0;
@@ -87,7 +87,7 @@ nav li > a:after {
 }
 aside {
 	display: inline;
- 	float: right;
+	float: right;
 	clear: right;
 	margin-right: -35mm;
 	margin-bottom: 1em;
