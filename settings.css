@@ -37,23 +37,21 @@ dl.properties > dt,
 dl.methods > dt {
 	font-weight: bold;
 }
-dd.example:before {
-	content: "Example:";
+dd.example:before,
+dd.default:before {
 	font-family:"Myriad Pro", "Verdana", sans-serif;
 	font-size: 10pt;
 	padding-right: 1ex;
 }
-dd.example {
+dd.example, 
+dd.default {
 	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
 }
 dd.default:before {
 	content: "Default:";
-	font-family:"Myriad Pro", "Verdana", sans-serif;
-	font-size: 10pt;
-	padding-right: 1ex;
 }
-dd.default {
-	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+dd.example:before {
+	content: "Example:";
 }
 h1.object {
 	text-transform: capitalize;
