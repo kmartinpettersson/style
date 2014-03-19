@@ -46,6 +46,15 @@ dd.example:before {
 dd.example {
 	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
 }
+dd.default:before {
+	content: "Default:";
+	font-family:"Myriad Pro", "Verdana", sans-serif;
+	font-size: 10pt;
+	padding-right: 1ex;
+}
+dd.default {
+	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+}
 h1.object {
 	text-transform: capitalize;
 }
