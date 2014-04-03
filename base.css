@@ -28,8 +28,8 @@ p+p {
 }
 
 ol, ul {
-	padding: 8pt 0 16pt 12mm;
-	margin: 0 0 0 0;
+	padding: 0 0 0 12mm;
+	margin: 2pt 0 8pt 0;
 	text-align: left;
 }
 ol {
@@ -52,8 +52,8 @@ ul > li:before {
 	left: -6mm;
 }
 dl {
-	padding: 8pt 0 16pt 6mm;
-	margin: 0 0 0 0;
+	padding: 0 0 0 6mm;
+	margin: 2pt 0 8pt 0;
 	text-align: left;
 }
 dl > dt {
@@ -102,20 +102,22 @@ nav > ol > li > ol > li:before {
 }
 
 table {
-	margin: 16pt 0 12pt 0;
+	margin: 16pt auto 12pt auto;
+	min-width: 80%;
+	max-width: 100%;
 	text-align: left;
 	page-break-inside:avoid; 
 	border-collapse: collapse;
 }
 table > thead > tr > th {
 	font-weight: bold;
-	border-bottom: 1px solid black;
-	padding: 0px 4px;
+	border-bottom: 1pt solid black;
+	padding: 0pt 4pt;
 	margin: 0;
 }
 table tr > td,
 table tr > th {
-	padding: 1px 4px;
+	padding: 1pt 4pt;
 	margin: 0;
 }
 table > caption {

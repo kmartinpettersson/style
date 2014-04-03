@@ -68,6 +68,9 @@ a[href^="http"] {
 span.footnote,
 a[href^="http"]:after {
 	float: footnote;
+	font: 10pt "Adobe Garamond Pro", "Garamond", "Georgia", serif;
+	font-weight: normal;
+	text-indent: 0;
 }
 a[href^="http"]:after {
 	content: attr(href);

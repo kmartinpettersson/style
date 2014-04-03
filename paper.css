@@ -15,7 +15,7 @@
 h2:before {
 	counter-increment: h2; 
 	content: counter(h1) "." counter(h2);
-    float: left;
+  float: left;
 	width: 13mm;
 }
 h2 {
@@ -26,19 +26,22 @@ h2 {
 h3:before {
 	counter-increment: h3; 
 	content: counter(h1) "." counter(h2) "." counter(h3) " ";
-    float: left;
+  float: left;
 	width: 13mm;
 }
 h3 {
 	font-size: 11pt;
+	margin: 16pt 0 8pt 0;
 	counter-reset: h4;
 }
 h4:before {
 	counter-increment: h4; 
 	content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " ";
-    float: left;
+  float: left;
 	width: 13mm;
 }
-h4 {
+h4, h5 {
 	font-size: 10pt;
+	margin: 8pt 0 3pt 0;
 }
+
