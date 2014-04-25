@@ -2,6 +2,9 @@ html {
 	font: 10pt "Adobe Garamond Pro", "Garamond", "Georgia", serif;
 	text-align: justify;
 }
+[lang="kr"] {
+	font-family: "NanumGothic", "Gulim", serif;
+}
 body {
 	counter-reset: h1 h2 h3 h4 table figure;
 	max-width: 18cm;
@@ -11,6 +14,24 @@ header, h1, h2, h3, h4, h5, h6, nav {
 	font-weight: normal;
 	page-break-after: avoid;
 }
+[lang="kr"] header, 
+header[lang="kr"],
+[lang="kr"] h1, 
+h1[lang="kr"],
+[lang="kr"] h2, 
+h2[lang="kr"],
+[lang="kr"] h3, 
+h3[lang="kr"],
+[lang="kr"] h4, 
+h4[lang="kr"],
+[lang="kr"] h5,
+h5[lang="kr"], 
+[lang="kr"] h6, 
+h6[lang="kr"],
+[lang="kr"] nav,
+nav[lang="kr"], {
+	font-family: "NanumGothic", "Gulim", sans-serif;
+}
 header {
 	font-size: 18pt;
 	padding: 40px 0 40px 0;
@@ -19,6 +40,10 @@ header {
 }
 code {
 	font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+}
+[lang="kr"] code,
+code[lang="kr"] {
+	font-family: "NanumGothicCoding", "Gulim", monospace;
 }
 p {
 	margin: 0;
