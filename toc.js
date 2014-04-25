@@ -53,13 +53,13 @@ function tocMake() {
 				break;
 			}
 		}
-  }
-  var nav = document.createElement("nav");
-  var title = document.createElement("h1");
-  title.appendChild(document.createTextNode(""));
-  nav.appendChild(title);
-  nav.appendChild(menu);
-  var header = document.getElementsByTagName("header")[0];
-  header.parentNode.insertBefore(nav, header.nextSibling);
+	}
+	var nav = document.createElement("nav");
+	var title = document.createElement("h1");
+	title.appendChild(document.createTextNode(""));
+	nav.appendChild(title);
+	nav.appendChild(menu);
+	var header = document.getElementsByTagName("header")[0];
+	header.parentNode.insertBefore(nav, header.nextSibling);
 }
 window.onload = tocMake;
