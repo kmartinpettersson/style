@@ -24,12 +24,14 @@ function tocMake() {
 			{
 			case "H1":
 				var content = tocGetText(children[i]);
-				var text = document.createTextNode(content);
 				chapterId = encodeURIComponent(content.toLowerCase()).replace(/%20/g,'.');
 				children[i].setAttribute("id", chapterId);
 				var link = document.createElement("a");
 				link.setAttribute("href", "#" + chapterId);
-				link.appendChild(text);
+				var language = children[i].getAttribute("lang")
+				if (language !== null && language !== undefined)
+					link.setAttribute("lang", language);
+				link.innerHTML = children[i].innerHTML;
 				chapter = document.createElement("li");
 				chapter.appendChild(link);
 				menu.appendChild(chapter);
@@ -37,12 +39,14 @@ function tocMake() {
 				break;
 			case "H2":
 				var content = tocGetText(children[i]);
-				var text = document.createTextNode(content);
 				var id = chapterId + "_" + encodeURIComponent(content.toLowerCase()).replace(/%20/g,'.');
 				children[i].setAttribute("id", id);
 				var link = document.createElement("a");
 				link.setAttribute("href", "#" + id);
-				link.appendChild(text);
+				var language = children[i].getAttribute("lang")
+				if (language !== null && language !== undefined)
+					link.setAttribute("lang", language);
+				link.innerHTML = children[i].innerHTML;
 				var section = document.createElement("li");
 				section.appendChild(link);
 				if (submenu === null) {
