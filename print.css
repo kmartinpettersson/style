@@ -1,5 +1,5 @@
 @media print {
-@page { 
+@page {
 	size: A4;
 	margin: 60mm 40mm 37mm 50mm;
 	@top-left {
@@ -16,7 +16,7 @@
 		white-space: pre;
 		content: string(identification) "\a" string(date) "\a" string(author) "\a\a" string(classification);
 	}
-	@bottom-right-corner { 
+	@bottom-right-corner {
 		font-family: "Myriad Pro", "Verdana", sans-serif;
 		font-weight: normal;
 		font-size: 8pt;
@@ -43,7 +43,10 @@ header:after {
 	margin: 0 0 0 0;
 	content: string(author);
 }
-h1, h2, h3, h4, h5, h6, h7 {
+h1 {
+	page-break-before: always;
+}
+h2, h3, h4, h5, h6, h7 {
 	page-break-after: avoid;
 }
 figure, table {
@@ -85,8 +88,8 @@ a[href^="http"]:after::footnote-call {
 	vertical-align: super;
 	line-height: none;
 }
-nav li > a:after { 
-	content: leader('.') target-counter(attr(href), page) 
+nav li > a:after {
+	content: leader('.') target-counter(attr(href), page)
 }
 aside {
 	display: inline;
