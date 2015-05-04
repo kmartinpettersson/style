@@ -25,11 +25,11 @@ nav > h1 {
 nav li > a:hover {
 	text-decoration: underline;
 }
-body:after { 
-	position: fixed; 
-	height: 100px; 
+body:after {
+	position: fixed;
+	height: 100px;
 	width:100%;
-	top: 100%; 
+	top: 100%;
 	left: 0cm;
 	width: 8cm;
 	margin-top:-30px;
@@ -46,6 +46,7 @@ span.footnote:before {
 span.footnote:after {
 	content: ") ";
 }
+content: attr(href);
 aside {
 	display: inline;
  	float: right;

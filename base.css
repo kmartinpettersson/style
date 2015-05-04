@@ -14,19 +14,19 @@ header, h1, h2, h3, h4, h5, h6, nav {
 	font-weight: normal;
 	page-break-after: avoid;
 }
-[lang="kr"] header, 
+[lang="kr"] header,
 header[lang="kr"],
-[lang="kr"] h1, 
+[lang="kr"] h1,
 h1[lang="kr"],
-[lang="kr"] h2, 
+[lang="kr"] h2,
 h2[lang="kr"],
-[lang="kr"] h3, 
+[lang="kr"] h3,
 h3[lang="kr"],
-[lang="kr"] h4, 
+[lang="kr"] h4,
 h4[lang="kr"],
 [lang="kr"] h5,
-h5[lang="kr"], 
-[lang="kr"] h6, 
+h5[lang="kr"],
+[lang="kr"] h6,
 h6[lang="kr"],
 [lang="kr"] nav,
 nav[lang="kr"], {
@@ -57,6 +57,9 @@ ol, ul {
 	margin: 2pt 0 8pt 0;
 	text-align: left;
 }
+ul > ul {
+	margin: 0 0 0 0;
+}
 ol {
 	counter-reset: li;
 }
@@ -64,7 +67,6 @@ li {
 	list-style: none;
 	position: relative;
 }
-
 ol > li:before {
 	counter-increment: li;
 	content: counter(li) ".";
@@ -131,8 +133,9 @@ table {
 	min-width: 80%;
 	max-width: 100%;
 	text-align: left;
-	page-break-inside:avoid; 
+	page-break-inside:avoid;
 	border-collapse: collapse;
+	counter-increment: table;
 }
 table > thead > tr > th {
 	font-weight: bold;
@@ -145,28 +148,36 @@ table tr > th {
 	padding: 1pt 4pt;
 	margin: 0;
 }
+table tbody tr.separator {
+	border-bottom: 1pt solid black;
+}
 table > caption {
 	font-style: italic;
-	caption-side:bottom;
+	caption-side:top;
 	margin:10pt 0 12pt 0;
 }
 table > caption:before{
-	counter-increment: table;
+	font-weight: bold;
 	content: "Table " counter(table) ": ";
+}
+p > a.table-ref:before {
+	content: "Table " target-counter(attr(href), table);
 }
 figure {
 	display: block;
 	width: 100%;
 	height: auto;
-	margin: 10mm 0 10mm 0;	
+	margin: 0 0 0 0;
+	counter-increment: figure;
 }
-figure {
-	width: 100%;
-	height: auto;
+figure + figure,
+p + figure,
+figure + p {
+	padding-top: 1em;
 }
 figure > img {
 	display: block;
-	max-height: 300px;
+	max-height: 400px;
 	max-width: 100%;
 	margin: 0 auto 0 auto;
 }
@@ -178,6 +189,24 @@ figure > figcaption {
 }
 figure > figcaption:before {
 	font-weight: bold;
-	counter-increment: figure;
 	content: "Figure " counter(figure) ": ";
+}
+p > a.fig-ref::before {
+	content: "Figure " target-counter(attr(href), figure);
+}
+p > a.table-ref::before {
+	content: "Table " target-counter(attr(href), table);
+}
+ol.references
+{
+	list-style-type: none;
+	margin-left: 0;
+	counter-reset: reference;
+}
+ol.references > li {
+	counter-increment: reference;
+	margin-top:5px;
+}
+p > a.ref {
+	content: "[" target-counter(attr(href), reference) "]";
 }
