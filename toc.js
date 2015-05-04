@@ -64,6 +64,10 @@ function tocMake() {
 	nav.appendChild(title);
 	nav.appendChild(menu);
 	var header = document.getElementsByTagName("header")[0];
-	header.parentNode.insertBefore(nav, header.nextSibling);
+	if (document.getElementById("abstract") != null) {
+		header.parentNode.insertBefore(nav, document.getElementById("abstract").nextSibling);	
+	} else {
+		header.parentNode.insertBefore(nav, header.nextSibling);
+	}
 }
 window.onload = tocMake;
