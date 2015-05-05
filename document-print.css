@@ -23,7 +23,7 @@
 		font-size: 14pt;
 		white-space: pre;
 		content: string(identification) "\a" string(date);
-	}	
+	}
 }
 header {
 	page-break-after: always;
@@ -39,4 +39,20 @@ header:after {
 }
 h1 {
 	page-break-before: always;
+}
+@page abstract{
+	page-break-after: always;
+}
+#abstract{
+	page: abstract;
+	prince-bookmark-level: 1;
+	prince-bookmark-label: "Abstract";
+}
+@page tableOfContents{
+	page-break-after: always;
+}
+nav{
+	page: tableOfContents;
+	prince-bookmark-level: 1;
+	prince-bookmark-label: "Table of contents";
 }
