@@ -32,25 +32,3 @@
         content: counter(page) " of " counter(pages);
     }
 }
-header:after {
-	page-break-after: always;
-}
-@page abstract{
-	page-break-after: always;
-}
-#abstract{
-	page: abstract;
-	prince-bookmark-level: 1;
-	prince-bookmark-label: "Abstract";
-}
-@page tableOfContents{
-	page-break-after: always;
-}
-nav{
-	page: tableOfContents;
-	prince-bookmark-level: 1;
-	prince-bookmark-label: "Table of contents";
-}
-h1 {
-	page-break-before: always;
-}

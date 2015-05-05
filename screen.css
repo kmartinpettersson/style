@@ -46,7 +46,7 @@ span.footnote:before {
 span.footnote:after {
 	content: ") ";
 }
-content: attr(href);
+
 aside {
 	display: inline;
  	float: right;
