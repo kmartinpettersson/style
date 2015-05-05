@@ -197,8 +197,7 @@ p > a.fig-ref::before {
 p > a.table-ref::before {
 	content: "Table " target-counter(attr(href), table);
 }
-ol.references
-{
+ol.references {
 	list-style-type: none;
 	margin-left: 0;
 	counter-reset: reference;
@@ -206,6 +205,9 @@ ol.references
 ol.references > li {
 	counter-increment: reference;
 	margin-top:5px;
+}
+ol.references > li:before {
+	content: counter(reference) ".";
 }
 p > a.ref {
 	content: "[" target-counter(attr(href), reference) "]";
