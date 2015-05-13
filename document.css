@@ -53,3 +53,15 @@ h4 {
 	display: inline-block;
 	text-align: center;
 }
+
+table.data {
+	font-family: verdana,arial,sans-serif;
+	font-size:10px;
+}
+table.data tr{
+
+}
+table.data td{
+	border-width: 1px;
+	padding: 3px;
+}

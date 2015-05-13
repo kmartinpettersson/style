@@ -192,7 +192,7 @@ figure > figcaption:before {
 p > a.fig-ref::before {
 	content: "Figure " target-counter(attr(href), figure);
 }
-p > a.table-ref::before {
+a.table-ref::before {
 	content: "Table " target-counter(attr(href), table);
 }
 ol.references {
@@ -207,6 +207,6 @@ ol.references > li {
 ol.references > li:before {
 	content: counter(reference) ".";
 }
-p > a.ref {
+a.ref {
 	content: "[" target-counter(attr(href), reference) "]";
 }
