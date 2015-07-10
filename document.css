@@ -56,7 +56,9 @@ h4 {
 
 table.data {
 	font-family: verdana,arial,sans-serif;
-	font-size:10px;
+	font-size:9px;
+	table-layout:fixed;
+	width:100%;
 }
 table.data tr{
 
